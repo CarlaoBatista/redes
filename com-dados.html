@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-29T18:23:20-03:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introdução à teoria básica da comunicação de dados</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\doubler}[1]{2#1}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="S03.html"><span class="title">Camada Física</span></a></h1>
+<p class="byline">Carlos André Batista</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="revisando-ondas.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="S03.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="meios-tx-guiados.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="revisando-ondas.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="S03.html" title="Up">Up</a><a class="next-button button toolbar-item" href="meios-tx-guiados.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="revisando-ondas.html" data-scroll="revisando-ondas"><span class="codenumber">1</span> <span class="title">Revisando Ondas</span></a></li>
+<li class="link active"><a href="com-dados.html" data-scroll="com-dados"><span class="codenumber">2</span> <span class="title">Introdução à teoria básica da comunicação de dados</span></a></li>
+<li class="link"><a href="meios-tx-guiados.html" data-scroll="meios-tx-guiados"><span class="codenumber">3</span> <span class="title">Meios de transmissão guiados</span></a></li>
+<li class="link"><a href="tx-sem-fios.html" data-scroll="tx-sem-fios"><span class="codenumber">4</span> <span class="title">Transmissão sem fios</span></a></li>
+<li class="link"><a href="satelites-de-com.html" data-scroll="satelites-de-com"><span class="codenumber">5</span> <span class="title">Satélites de comunicação</span></a></li>
+<li class="link"><a href="modulacao-e-mux.html" data-scroll="modulacao-e-mux"><span class="codenumber">6</span> <span class="title">Modulação digital e multiplexação</span></a></li>
+<li class="link"><a href="telef-movel.html" data-scroll="telef-movel"><span class="codenumber">7</span> <span class="title">Sistema de telefonia móvel</span></a></li>
+<li class="link"><a href="exercicios.html" data-scroll="exercicios"><span class="codenumber">8</span> <span class="title">Exercícios</span></a></li>
+<li class="link"><a href="referencias.html" data-scroll="referencias"><span class="codenumber">9</span> <span class="title">Referências</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="com-dados"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2</span> <span class="title">Introdução à teoria básica da comunicação de dados</span>
+</h2>
+<p id="p-34">Na seção anterior (<a href="revisando-ondas.html" class="internal" title="Section 1: Revisando Ondas">Section 1</a>), vimos algumas informações sobre ondas que iremos usar para compreender um pouco sobre como dados podem ser enviados pelos meios físicos e de como as propriedados dos meios, em relação à propagação de ondas ou sinais, interfere na capacidade de envio de dados através de sinais.</p>
+<p id="p-35"><em class="alert">Tópicos</em></p>
+<ul class="disc">
+<li id="li-8"><p id="p-36">Análise de Fourier</p></li>
+<li id="li-9"><p id="p-37">Sinais limitados pela largura de banda</p></li>
+<li id="li-10"><p id="p-38">Taxa máxima de dados em um canal</p></li>
+</ul>
+<p id="p-39"><em class="alert">Análise de Fourier</em></p>
+<p id="p-40">Os sinais utilizados para a transmissão de dados podem ser a variação de alguma propriedade física, como tensão ou corrente variando no tempo. Podemos denominar esta variação como uma função do tempo \(f(t)\text{,}\) e podemos modelar o comportamento do sinal para analisá-lo matematicamente. O modelo que usaremos aqui será a <em class="emphasis">Série de Fourier</em>, criada por Jean-Baptiste Fourier no séc. XIX.</p>
+<p id="p-41">Segundo Fourier, qualquer função periódica \(g(t)\text{,}\) razoavelmente estável, de período \(T\text{,}\) pode ser construída como a soma de um número, infinito ou não, de senos e cossenos, ou seja:</p>
+<div class="displaymath" id="p-42">
+\begin{equation*}
+g(t)=\frac{1}{2}c+\sum\limits_{n=1}^{\infty} a_n\sin(2\pi nft)+\sum\limits_{n=1}^{\infty} b_n\cos(2\pi nft)\text{,}
+\end{equation*}
+</div>
+<p id="p-43">no qual</p>
+<p id="p-44">\(f=\frac{1}{T}\) é a frequência fundamental ou frequência do primeiro harmônico.</p>
+<p id="p-45">\(a_n\) e \(b_n\) são as amplitudes dos \(n\)-ésimos harmônicos.</p>
+<p id="p-46">\(c\) é uma constante.</p>
+<p id="p-47">Uma vez que se tenha o período da freqüência fundamental \(T\) e as amplitudes dos senos e cossenos, pode-se reconstruir a função original.</p>
+<p id="p-48">Mais adiante, teremos como exemplo, que encontrar as amplitudes \(a_n\) e \(b_n\) dos primeiros harmônicos de um sinal, que no caso, é uma onda modulando na amplitude um caratere de 8 bits. Para encontrar tais amplitudes e a constante \(c\text{,}\) usamos as equações</p>
+<div class="displaymath" id="p-49">
+\begin{equation*}
+a_n = \frac{2}{T}\int_0^T g(t)\sin(2\pi nft)dt
+\end{equation*}
+</div>
+<div class="displaymath" id="p-50">
+\begin{equation*}
+b_n = \frac{2}{T}\int_0^T g(t)\cos(2\pi nft)dt
+\end{equation*}
+</div>
+<div class="displaymath" id="p-51">
+\begin{equation*}
+c = \frac{2}{T}\int_0^T g(t)dt
+\end{equation*}
+</div> Como veremos no exemplo, o tempo associado ao sinal inteiro, no caso, aos 8 bits do caractere, será dado como sendo o período \(T_1\) da freqüência fundamental \(f_1\text{.}\) Porém, esse sinal irá passar por um canal e, dependendo da freqüência máxima permitida por este, talvez não seja possível  enviar o sinal de modo que ele seja compreensível pelo receptor, e isso saberemos quando, baseado na freqüência fundamental \(f_1\text{,}\) encontrarmos o maior harmônico \(F_n=nf_1\text{,}\) de modo que \(F_n\leq\mathcal{f}\text{,}\) sendo \(\mathcal{f}\) a freqüência máxima permitida no canal. Compreendamos como se dá tal limitação na seção abaixo. <p id="p-52"><em class="alert">Como a largura de banda pode limitar os sinais?</em></p>
+<p id="p-53"><em class="alert">Como a largura de banda pode limitar os sinais?</em></p>
+<p id="p-54">Como anunciamos anteriormente, usemos como exemplo o envio do caractere "b", em ASCII, representado como a seqüência de 8 bits 01100010. Considerando que o sinal será enviado serialmente por um fio usando o valor de tensão 0V para representar o bit 0 e 5V para representar o bit 1, a saída de voltagem do computador transmissor seria dado pelo sinal</p>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/char_b.png" class="contained" alt="Exemplo de sinal representando o caractere ASCII b."></div> Pergunta-se: Quais os coeficientes da série de Fourier para os 4 primeiros harmônicos? Em seguida, faça gráficos considerando cada harmônico como sendo a frequência máxima, ou seja, reconstrua o sinal com n=1, depoic com n = (1,2), depois com n=(1,2,3), e, por fim, com n = (1,2,3,4). O applet interativo abaixo pode ajudar a entender a influência do número de harmônicos na capacidade de envio de sinais. Por fim, obtenha o <em class="emphasis">espectro de potências</em>, que é um gráfico que informa, grosseiramente falando, o quanto de cada freqüência é transmitido, que é proporcional a \(\sqrt{a_n^2+b_n^2}\text{.}\) <p id="p-55"><em class="emphasis">Respostas:</em></p> Como o sinal tem período \(T\text{,}\) cada bit leva um tempo \(T/8\) para ser transmitido. Sendo assim, podemos definir o final 01100010 como a função \(g(t)\text{,}\) dada por <p id="p-56">\(g(t)=\)</p>
+<p id="p-57">\(0,\) se \(0\le t\le T/8,\)</p>
+<p id="p-58">\(1,\) se \(T/8 \gt t\le 3T/8,\)</p>
+<p id="p-59">\(0,\) se \(3T/8\gt t\le 6T/8,\)</p>
+<p id="p-60">\(1,\) se \(6T/8\gt t\le 7T/8,\)</p>
+<p id="p-61">\(0,\) se \(7T/8\gt t\le T.\)</p> Calculando para \(a_n\text{,}\) temos: <div class="displaymath" id="p-62">
+\begin{equation*}
+a_n=\frac{2}{T}\int_0^T g(t)\sin(2\pi nft)dt = \frac{2}{T}\int_{T/8}^{3T/8} \sin(2\pi nft)dt+\frac{2}{T}\int_{6T/8}^{7T/8}\sin(2\pi nft)dt
+\end{equation*}
+</div>
+<div class="displaymath" id="p-63">
+\begin{equation*}
+=\frac{2}{T} \left[-\frac{\cos(2\pi nft)}{2\pi nf}\Bigg|_{T/8}^{3T/8} -\frac{\cos(2\pi nft)}{2\pi nf}\Bigg|_{6T/8}^{7T/8}\right] 
+\end{equation*}
+</div>
+<div class="displaymath" id="p-64">
+\begin{equation*}
+=\frac{2}{2\pi nfT}\left[ -\cos\left(2\pi nf\frac{3T}{8}\right)+\cos\left(2\pi nf\frac{T}{8}\right)-\cos\left(2\pi nf\frac{7T}{8}\right)+\cos\left(2\pi nf\frac{6T}{8}\right)\right]
+\end{equation*}
+</div>
+<p id="p-65">Como \(f = 1/T\text{,}\) temos que \(fT=1\text{,}\) então</p>
+<div class="displaymath" id="p-66">
+\begin{equation*}
+a_n= \frac{1}{n\pi} \left[ 
+\cos\left(\frac{n\pi}{4}\right)
++\cos\left(\frac{6n\pi}{4}\right)-
+\cos\left(\frac{3n\pi}{4}\right)-
+\cos\left(\frac{7n\pi}{4}\right) \right]
+\end{equation*}
+</div>
+<p id="p-67">Para \(b_n\text{,}\) temos</p>
+<div class="displaymath" id="p-68">
+\begin{equation*}
+b_n=\frac{2}{T}\int_0^T g(t)\cos(2\pi nft)dt = \frac{2}{T}\int_{T/8}^{3T/8} \cos(2\pi nft)dt+\frac{2}{T}\int_{6T/8}^{7T/8}\cos(2\pi nft)dt
+\end{equation*}
+</div>
+<div class="displaymath" id="p-69">
+\begin{equation*}
+=\frac{2}{T} \left[\frac{\sin(2\pi nft)}{2\pi nf}\Bigg|_{T/8}^{3T/8} +\frac{\sin(2\pi nft)}{2\pi nf}\Bigg|_{6T/8}^{7T/8}\right] 
+\end{equation*}
+</div>
+<div class="displaymath" id="p-70">
+\begin{equation*}
+=\frac{2}{2\pi nfT}\left[ \sin\left(2\pi nf\frac{3T}{8}\right)-\sin\left(2\pi nf\frac{T}{8}\right)+\sin\left(2\pi nf\frac{7T}{8}\right)-\sin\left(2\pi nf\frac{6T}{8}\right)\right]
+\end{equation*}
+</div>
+<div class="displaymath" id="p-71">
+\begin{equation*}
+b_n= \frac{1}{n\pi} \left[ 
+\sin\left(\frac{3n\pi}{4}\right)
++\sin\left(\frac{7n\pi}{4}\right)-
+\sin\left(\frac{n\pi}{4}\right)-
+\sin\left(\frac{6n\pi}{4}\right) \right]
+\end{equation*}
+</div> E, finalmente, para \(c\text{,}\) temos <div class="displaymath" id="p-72">
+\begin{equation*}
+c = \frac{2}{T}\int_0^T g(t)dt=\frac{2}{T}\left[ \int_{T/8}^{3T/8}dt+\int_{6T/8}^{7T/8}dt\right]
+=\frac{2}{T}\left[ t \bigg|_{T/8}^{3T/8}+t\bigg|_{6T/8}^{7T/8}\right]
+\end{equation*}
+</div>
+<div class="displaymath" id="p-73">
+\begin{equation*}
+c =\frac{2}{T}\left[ \frac{3T}{8}-\frac{T}{8}+\frac{7T}{8}-\frac{6T}{8} \right] = \frac{3}{4}
+\end{equation*}
+</div>
+<p id="p-74">De posse destas da equação da série de Fourier \(g(t)\text{,}\) e das equações dos coeficientes \(a_n\text{,}\) \(b_n\) e \(c\text{,}\) podemos remontar o sinal. Quanto maior for o valor de \(n\text{,}\) mais próximo do sinal original a função \(g(t)\) estará. Usando o applet abaixo, você pode observar como o sinal vai se tornando mais preciso à medida que \(n\) cresce.</p>
+<figure class="figure figure-like" id="figure-interactive-fourier-series"><iframe id="interactive-fourier-series" width="600" height="720" src="interactive-fourier-series-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1<span class="period">.</span></span><span class="space"> </span>Série de Fourier</figcaption></figure><p id="p-75">Como exercício, obtenha o sinais reconstruídos como pedido no enunciado em qualquer linguagem de programação ou planilha eletrônica.</p>
+<p id="p-76">Obtenhamos, então, o espectro de potências usando as expressões encontradas para os vários valores de \(n\)</p>. <figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2<span class="period">.</span></span><span class="space"> </span>Espectro de Potências</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(n\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(a_n\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(b_n\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(\sqrt{a_n^2+b_n^2}\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.2251\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.0932\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.2436\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(-0.1592\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(-0.4775\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.5033\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(3\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(-0.0750\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(-0.1811\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.1960\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(4\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.1592\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.000\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(0.1592\)</td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="fig-sage-cubic"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/sageplot-cubic.svg" role="img" class="contained" alt="A cubic function on the interval [-3,2]" onerror="this.src='images/sageplot-cubic.png';this.onerror=null;"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3<span class="period">.</span></span><span class="space"> </span>A cubic plotted by SageMath on \([-3,2]\)</figcaption></figure></section></div></main>
+</div>
+</body>
+</html>
